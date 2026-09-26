@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { useDirection } from "../../context/DirectionContext";
 
 const navLinks = [
   { label: "Women", href: "/women" },
@@ -13,6 +14,7 @@ const navLinks = [
 ];
 
 export default function Header() {
+  const { locale, setLocale } = useDirection();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
 
@@ -139,18 +141,44 @@ export default function Header() {
               aria-hidden="true"
             />
 
-            {/* EN | AR */}
+            {/* EN | AR Direction & Language Toggle */}
             <div
               className="
-                flex items-center gap-px
+                flex items-center gap-0.5
                 font-[var(--font-jost)] font-light
                 text-[11px] tracking-[0.06em]
-                whitespace-nowrap shrink-0 px-1
+                whitespace-nowrap shrink-0 px-1 select-none
               "
+              role="group"
+              aria-label="Language and layout direction"
             >
-              <span className="text-[#0A0A0A]">EN</span>
-              <span className="mx-1 text-[#9A9A9A]">|</span>
-              <span className="text-[#9A9A9A]">AR</span>
+              <button
+                type="button"
+                id="header-lang-en"
+                onClick={() => setLocale("en")}
+                aria-pressed={locale === "en"}
+                className={`transition-colors duration-200 cursor-pointer ${
+                  locale === "en"
+                    ? "text-[#0A0A0A] font-medium"
+                    : "text-[#9A9A9A] hover:text-[#0A0A0A]"
+                }`}
+              >
+                EN
+              </button>
+              <span className="mx-1 text-[#9A9A9A]" aria-hidden="true">|</span>
+              <button
+                type="button"
+                id="header-lang-ar"
+                onClick={() => setLocale("ar")}
+                aria-pressed={locale === "ar"}
+                className={`transition-colors duration-200 cursor-pointer ${
+                  locale === "ar"
+                    ? "text-[#0A0A0A] font-medium"
+                    : "text-[#9A9A9A] hover:text-[#0A0A0A]"
+                }`}
+              >
+                AR
+              </button>
             </div>
 
             {/* Account */}
@@ -196,7 +224,7 @@ export default function Header() {
           {/* ── Mobile hamburger (< lg) ─────────────────────────────────── */}
           <button
             id="mobile-menu-btn"
-            className="lg:hidden flex flex-col gap-[5px] p-2 ml-auto"
+            className="lg:hidden flex flex-col gap-[5px] p-2 ms-auto"
             aria-label="Open menu"
             onClick={() => setMobileOpen(true)}
           >
@@ -267,34 +295,76 @@ export default function Header() {
               ))}
             </nav>
 
-            <div className="flex items-center gap-4 mt-auto pt-6 border-t border-[#F0F0F0]">
-              <button aria-label="Account">
-                <Image
-                  src="/HomeAssets/icons/account.svg"
-                  alt=""
-                  aria-hidden="true"
-                  width={18}
-                  height={18}
-                />
-              </button>
-              <button aria-label="Wishlist">
-                <Image
-                  src="/HomeAssets/icons/wishlist.svg"
-                  alt=""
-                  aria-hidden="true"
-                  width={18}
-                  height={18}
-                />
-              </button>
-              <button aria-label="Cart">
-                <Image
-                  src="/HomeAssets/icons/cart.svg"
-                  alt=""
-                  aria-hidden="true"
-                  width={18}
-                  height={18}
-                />
-              </button>
+            <div className="flex items-center justify-between mt-auto pt-6 border-t border-[#F0F0F0]">
+              <div className="flex items-center gap-4">
+                <button aria-label="Account">
+                  <Image
+                    src="/HomeAssets/icons/account.svg"
+                    alt=""
+                    aria-hidden="true"
+                    width={18}
+                    height={18}
+                  />
+                </button>
+                <button aria-label="Wishlist">
+                  <Image
+                    src="/HomeAssets/icons/wishlist.svg"
+                    alt=""
+                    aria-hidden="true"
+                    width={18}
+                    height={18}
+                  />
+                </button>
+                <button aria-label="Cart">
+                  <Image
+                    src="/HomeAssets/icons/cart.svg"
+                    alt=""
+                    aria-hidden="true"
+                    width={18}
+                    height={18}
+                  />
+                </button>
+              </div>
+
+              {/* Mobile EN | AR Direction Toggle */}
+              <div
+                className="
+                  flex items-center gap-0.5
+                  font-[var(--font-jost)] font-light
+                  text-[12px] tracking-[0.06em]
+                  whitespace-nowrap px-1 select-none
+                "
+                role="group"
+                aria-label="Language and layout direction"
+              >
+                <button
+                  type="button"
+                  id="mobile-lang-en"
+                  onClick={() => setLocale("en")}
+                  aria-pressed={locale === "en"}
+                  className={`transition-colors duration-200 cursor-pointer ${
+                    locale === "en"
+                      ? "text-[#0A0A0A] font-medium"
+                      : "text-[#9A9A9A] hover:text-[#0A0A0A]"
+                  }`}
+                >
+                  EN
+                </button>
+                <span className="mx-1 text-[#9A9A9A]" aria-hidden="true">|</span>
+                <button
+                  type="button"
+                  id="mobile-lang-ar"
+                  onClick={() => setLocale("ar")}
+                  aria-pressed={locale === "ar"}
+                  className={`transition-colors duration-200 cursor-pointer ${
+                    locale === "ar"
+                      ? "text-[#0A0A0A] font-medium"
+                      : "text-[#9A9A9A] hover:text-[#0A0A0A]"
+                  }`}
+                >
+                  AR
+                </button>
+              </div>
             </div>
           </div>
         </div>

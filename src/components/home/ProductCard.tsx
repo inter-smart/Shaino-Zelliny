@@ -88,7 +88,7 @@ export default function ProductCard({
               ? `Remove ${product.name} from wishlist`
               : `Add ${product.name} to wishlist`
           }
-          className="absolute top-3 right-3 z-10 p-2 rounded-full bg-white/80 hover:bg-white text-[#0A0A0A] shadow-sm transition-all duration-200 hover:scale-110 focus:outline-none focus-visible:ring-1 focus-visible:ring-black"
+          className="absolute top-3 end-3 z-10 p-2 rounded-full bg-white/80 hover:bg-white text-[#0A0A0A] shadow-sm transition-all duration-200 hover:scale-110 focus:outline-none focus-visible:ring-1 focus-visible:ring-black"
         >
           <Image
             src="/HomeAssets/icons/Wishlist-Product.svg"
@@ -109,7 +109,7 @@ export default function ProductCard({
               type="button"
               onClick={prevImage}
               aria-label={`Previous image for ${product.name}`}
-              className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-7 h-7 rounded-full bg-white/85 hover:bg-white text-[#0A0A0A] flex items-center justify-center opacity-0 group-hover:opacity-100 focus:opacity-100 focus-visible:opacity-100 focus:outline-none transition-opacity duration-200 shadow-sm text-sm"
+              className="absolute start-2 top-1/2 -translate-y-1/2 z-10 w-7 h-7 rounded-full bg-white/85 hover:bg-white text-[#0A0A0A] flex items-center justify-center opacity-0 group-hover:opacity-100 focus:opacity-100 focus-visible:opacity-100 focus:outline-none transition-opacity duration-200 shadow-sm text-sm"
             >
               ‹
             </button>
@@ -117,7 +117,7 @@ export default function ProductCard({
               type="button"
               onClick={nextImage}
               aria-label={`Next image for ${product.name}`}
-              className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-7 h-7 rounded-full bg-white/85 hover:bg-white text-[#0A0A0A] flex items-center justify-center opacity-0 group-hover:opacity-100 focus:opacity-100 focus-visible:opacity-100 focus:outline-none transition-opacity duration-200 shadow-sm text-sm"
+              className="absolute end-2 top-1/2 -translate-y-1/2 z-10 w-7 h-7 rounded-full bg-white/85 hover:bg-white text-[#0A0A0A] flex items-center justify-center opacity-0 group-hover:opacity-100 focus:opacity-100 focus-visible:opacity-100 focus:outline-none transition-opacity duration-200 shadow-sm text-sm"
             >
               ›
             </button>

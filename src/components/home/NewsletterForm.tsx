@@ -32,7 +32,7 @@ export default function NewsletterForm() {
       <button
         type="submit"
         id="newsletter-submit"
-        className="bg-white text-[#0A0A0A] font-[var(--font-jost)] font-medium text-[11px] sm:text-[12px] tracking-[0.16em] uppercase px-5 py-2.5 hover:bg-neutral-200 transition-colors whitespace-nowrap shrink-0 border-l border-white"
+        className="bg-white text-[#0A0A0A] font-[var(--font-jost)] font-medium text-[11px] sm:text-[12px] tracking-[0.16em] uppercase px-5 py-2.5 hover:bg-neutral-200 transition-colors whitespace-nowrap shrink-0 border-s border-white"
         style={{ backgroundColor: "#ffffff", color: "#0A0A0A" }}
       >
         {submitted ? "CONFIRMED" : "CONFIRM"}
