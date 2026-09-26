@@ -32,6 +32,7 @@ export default function HeroBanner() {
             font-[var(--font-jost)] font-light text-white uppercase leading-none
             tracking-[0.18em] whitespace-nowrap
             text-[clamp(20px,5vw,78px)]
+            animate-hero-title
           "
         >
           HOUSE OF ZELLINY
@@ -42,6 +43,7 @@ export default function HeroBanner() {
           className="
             font-[var(--font-jost)] font-light tracking-[0.28em] text-white/80 uppercase mt-4
             text-[clamp(9px,1vw,14px)] whitespace-nowrap
+            animate-hero-subline
           "
         >
           A gift to remember

@@ -63,7 +63,7 @@ export default function HousesWeCurate() {
           Brand logo row wrapped in a single elevated card container with soft shadow
           and thin 1px vertical divider lines between each logo cell matching PDF
         */}
-        <div className="fade-up bg-white rounded-sm shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-[#ECEBE6]">
+        <div className="fade-scale delay-150 bg-white rounded-sm shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-[#ECEBE6]">
           <div className="grid grid-cols-2 md:grid-cols-5 divide-y md:divide-y-0 md:divide-x divide-[#EAE8E2]">
             {houses.map((house, i) => (
               <Link
@@ -89,7 +89,7 @@ export default function HousesWeCurate() {
         </div>
 
         {/* View All Maisons CTA */}
-        <div className="fade-up mt-12 lg:mt-16 text-center">
+        <div className="fade-up delay-250 mt-12 lg:mt-16 text-center">
           <Link
             href="/brands"
             id="view-all-maisons"

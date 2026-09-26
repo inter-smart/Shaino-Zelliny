@@ -83,7 +83,7 @@ export default function CuratedForYou() {
       {/* 
         Pagination arrows + scroll progress indicator bar matching PDF (y=4568, x=641..794, track width=118px)
       */}
-      <div className="flex items-center justify-center gap-4 sm:gap-5 mt-12 sm:mt-14">
+      <div className="fade-up delay-200 flex items-center justify-center gap-4 sm:gap-5 mt-12 sm:mt-14">
         <button
           type="button"
           onClick={handlePrev}

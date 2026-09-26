@@ -29,7 +29,7 @@ export default function HouseOfZelliny() {
       */}
       <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
         <div
-          className="fade-up relative w-full overflow-hidden bg-[#0A0A0A]"
+          className="fade-scale delay-150 relative w-full overflow-hidden bg-[#0A0A0A]"
           style={{ aspectRatio: "1440 / 618" }}
         >
           <video

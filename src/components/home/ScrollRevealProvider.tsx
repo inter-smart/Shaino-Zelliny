@@ -8,7 +8,7 @@ import { useEffect } from "react";
  */
 export default function ScrollRevealProvider() {
   useEffect(() => {
-    const targets = document.querySelectorAll(".fade-up, .fade-in");
+    const targets = document.querySelectorAll(".fade-up, .fade-in, .fade-scale");
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -19,7 +19,7 @@ export default function ScrollRevealProvider() {
           }
         });
       },
-      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.08, rootMargin: "0px 0px -30px 0px" }
     );
 
     targets.forEach((el) => observer.observe(el));

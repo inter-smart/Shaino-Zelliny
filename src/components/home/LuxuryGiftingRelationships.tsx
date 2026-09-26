@@ -71,7 +71,7 @@ export default function LuxuryGiftingRelationships() {
         - Panel 1 caption is always visible by default
       */}
       <div
-        className="hidden lg:flex h-[520px] xl:h-[580px] w-full overflow-hidden gap-0 rounded-none isolate"
+        className="fade-up delay-150 hidden lg:flex h-[520px] xl:h-[580px] w-full overflow-hidden gap-0 rounded-none isolate"
         role="region"
         aria-label="Luxury gifting panels"
         onMouseLeave={() => setHoveredPanel(null)}
@@ -159,7 +159,7 @@ export default function LuxuryGiftingRelationships() {
       </div>
 
       {/* Mobile: 4 cleanly contained cards with title + Discover More */}
-      <div className="flex flex-col sm:grid sm:grid-cols-2 lg:hidden gap-4">
+      <div className="fade-up delay-150 flex flex-col sm:grid sm:grid-cols-2 lg:hidden gap-4">
         {panels.map((panel) => (
           <div
             key={`mob-${panel.id}`}
@@ -200,7 +200,7 @@ export default function LuxuryGiftingRelationships() {
       {/* 
         Solid black rectangular button with white uppercase letter-spaced text, centered below
       */}
-      <div className="mt-12 sm:mt-14 lg:mt-16 text-center">
+      <div className="fade-up delay-200 mt-12 sm:mt-14 lg:mt-16 text-center">
         <a
           href="#corporate-gifting"
           id="explore-corporate-gifting-cta"

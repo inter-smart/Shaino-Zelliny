@@ -36,12 +36,13 @@ body {
   text-decoration: none;
 }
 
-/* Scroll animation base */
+/* Scroll animation base — Luxury Classic Motion */
 .fade-up {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateY(22px);
+  will-change: opacity, transform;
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fade-up.visible {
@@ -51,33 +52,77 @@ body {
 
 .fade-in {
   opacity: 0;
-  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: opacity;
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fade-in.visible {
   opacity: 1;
 }
 
+.fade-scale {
+  opacity: 0;
+  transform: translateY(18px) scale(0.985);
+  will-change: opacity, transform;
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-scale.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
 /* Stagger delays */
+.delay-75 { transition-delay: 0.075s; }
 .delay-100 { transition-delay: 0.1s; }
+.delay-150 { transition-delay: 0.15s; }
 .delay-200 { transition-delay: 0.2s; }
+.delay-250 { transition-delay: 0.25s; }
 .delay-300 { transition-delay: 0.3s; }
 .delay-400 { transition-delay: 0.4s; }
+.delay-500 { transition-delay: 0.5s; }
+
+/* Hero entrance keyframes */
+@keyframes heroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-hero-title {
+  animation: heroFadeUp 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+.animate-hero-subline {
+  animation: heroFadeUp 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+}
 
 /* Progressive enhancement & accessibility fallbacks */
 @media (prefers-reduced-motion: reduce) {
   .fade-up,
-  .fade-in {
+  .fade-in,
+  .fade-scale,
+  .animate-hero-title,
+  .animate-hero-subline {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
+    animation: none !important;
   }
 }
 
 @media (scripting: none) {
   .fade-up,
-  .fade-in {
+  .fade-in,
+  .fade-scale {
     opacity: 1 !important;
     transform: none !important;
+    transition: none !important;
   }
 }

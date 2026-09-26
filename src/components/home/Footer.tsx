@@ -42,7 +42,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-14 border-b border-white/10">
 
           {/* Column 1 — Explore (lg:col-span-2) */}
-          <div className="lg:col-span-2">
+          <div className="fade-up lg:col-span-2">
             <h3 className="font-[var(--font-montserrat)] font-light text-[#9A9A9A] text-[12px] sm:text-[13px] mb-4 tracking-[0.08em] uppercase">
               Explore
             </h3>
@@ -62,7 +62,7 @@ export default function Footer() {
           </div>
 
           {/* Column 2 — Categories with 2 sub-columns matching PDF (lg:col-span-4) */}
-          <div className="lg:col-span-4">
+          <div className="fade-up delay-100 lg:col-span-4">
             <h3 className="font-[var(--font-montserrat)] font-light text-[#9A9A9A] text-[12px] sm:text-[13px] mb-4 tracking-[0.08em] uppercase">
               Categories
             </h3>
@@ -97,7 +97,7 @@ export default function Footer() {
           </div>
 
           {/* Column 3 — Contact & Follow Us (lg:col-span-2) */}
-          <div className="lg:col-span-2">
+          <div className="fade-up delay-150 lg:col-span-2">
             <h3 className="font-[var(--font-montserrat)] font-light text-[#9A9A9A] text-[12px] sm:text-[13px] mb-4 tracking-[0.08em] uppercase">
               Contact
             </h3>
@@ -160,7 +160,7 @@ export default function Footer() {
           </div>
 
           {/* Column 4 — Logo & Newsletter (lg:col-span-4) */}
-          <div className="lg:col-span-4">
+          <div className="fade-up delay-200 lg:col-span-4">
             <div className="mb-6">
               <Image
                 src="/HomeAssets/footer-logo.png"
@@ -186,7 +186,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar — inline left-aligned legal text matching PDF */}
-        <div className="py-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] sm:text-[12px] font-[var(--font-montserrat)] font-light text-[#9A9A9A]">
+        <div className="fade-in delay-250 py-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] sm:text-[12px] font-[var(--font-montserrat)] font-light text-[#9A9A9A]">
           <span>© 2026 ZELLINY</span>
           <span>·</span>
           <span>All rights reserved</span>
