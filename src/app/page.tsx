@@ -1,69 +1,59 @@
-import Image from "next/image";
+import Header from "@/components/home/Header";
+import HeroBanner from "@/components/home/HeroBanner";
+import ShopByCategory from "@/components/home/ShopByCategory";
+import HouseOfZelliny from "@/components/home/HouseOfZelliny";
+import CuratedForYou from "@/components/home/CuratedForYou";
+import LuxuryThoughtfullySelected from "@/components/home/LuxuryThoughtfullySelected";
+import HousesWeCurate from "@/components/home/HousesWeCurate";
+import LuxuryGiftingRelationships from "@/components/home/LuxuryGiftingRelationships";
+import EveryGiftCrafted from "@/components/home/EveryGiftCrafted";
+import PersonalService from "@/components/home/PersonalService";
+import Footer from "@/components/home/Footer";
+import ScrollRevealProvider from "@/components/home/ScrollRevealProvider";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <>
+      {/* Wires scroll-based fade animations */}
+      <ScrollRevealProvider />
+
+      {/* 1. Header (sticky, with announcement bar) */}
+      <Header />
+
+      <main id="main-content">
+        {/* 2. Hero Banner — full-width video placeholder */}
+        <HeroBanner />
+
+        {/* 3. Shop by Category — 8 items */}
+        <ShopByCategory />
+
+        {/* 4. House of Zelliny / "One house for every occasion" */}
+        <HouseOfZelliny />
+
+        {/* 5. Curated for You — 4 products */}
+        <CuratedForYou />
+
+        {/* 6. Luxury, Thoughtfully Selected — full-width image */}
+        <LuxuryThoughtfullySelected />
+
+        {/* 7. Houses We Curate — brand logos */}
+        <HousesWeCurate />
+
+        {/* 8. Luxury Gifting for Relationships — horizontal accordion */}
+        <LuxuryGiftingRelationships />
+
+        {/* 9. Every Gift, Crafted — 3 packaging options */}
+        <EveryGiftCrafted />
+
+        {/* 10. Personal Service / Concierge */}
+        <PersonalService />
+
+        {/* Small white strip just above footer */}
+        <div className="w-full h-5 sm:h-7 bg-white" aria-hidden="true" />
       </main>
-    </div>
+
+      {/* 11. Footer */}
+      <Footer />
+    </>
   );
 }
